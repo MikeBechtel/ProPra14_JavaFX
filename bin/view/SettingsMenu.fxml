@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" snapToPixel="true" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.SettingsMenuController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <VBox id="VBox" alignment="TOP_LEFT" minHeight="196.0" prefHeight="251.0" prefWidth="348.0" spacing="15.0" styleClass="vbox" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="166.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER_LEFT" blendMode="SCREEN" disable="false" fillHeight="true" focusTraversable="false" mouseTransparent="false" spacing="50.0">
+          <children>
+            <Label minWidth="-Infinity" prefWidth="100.0" text="Resolution" HBox.hgrow="NEVER" />
+            <ChoiceBox fx:id="choiceRes" minWidth="-Infinity" prefWidth="150.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+          </children>
+        </HBox>
+        <CheckBox mnemonicParsing="false" styleClass="label" text="Fullscreen">
+          <stylesheets>
+            <URL value="@MenuCSS.css" />
+          </stylesheets>
+        </CheckBox>
+        <Separator prefWidth="324.0" />
+        <CheckBox contentDisplay="LEFT" graphicTextGap="4.0" mnemonicParsing="false" styleClass="label" text="Music on/off" underline="false" wrapText="false" />
+        <Separator prefWidth="200.0" />
+        <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="179.0" spacing="15.0">
+          <children>
+            <Button mnemonicParsing="false" text="Apply" />
+            <Button mnemonicParsing="false" onAction="#handleBack" text="Back" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@MenuCSS.css" />
+  </stylesheets>
+</AnchorPane>

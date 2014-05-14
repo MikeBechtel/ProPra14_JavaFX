@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" snapToPixel="true" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.MainMenuController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <VBox id="VBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="212.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="325.0" AnchorPane.topAnchor="213.0">
+      <children>
+        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLocal" prefHeight="50.0" prefWidth="200.0" text="Local Game" VBox.vgrow="NEVER">
+          <stylesheets>
+            <URL value="@MainMenuCSS.css" />
+          </stylesheets>
+        </Button>
+        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Network Game" VBox.vgrow="NEVER" />
+        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSettings" prefHeight="50.0" prefWidth="200.0" text="Settings" VBox.vgrow="NEVER" />
+        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleExit" prefHeight="50.0" prefWidth="200.0" text="Exit" VBox.vgrow="NEVER" />
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@MenuCSS.css" />
+  </stylesheets>
+</AnchorPane>
