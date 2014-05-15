@@ -10,7 +10,7 @@ import model.*;
 public class CollisionAdapter 
 {
 	private AnchorPane parentPane;
-	private final double lookAhead = 0.1;
+	private final double lookAhead = 0.5;
 	
 	public CollisionAdapter(AnchorPane parentPane)
 	{
@@ -44,7 +44,7 @@ public class CollisionAdapter
 	        
 	        sprite.setTranslateX(sprite.getTranslateX() + lookAhead*sprite.getSpeedX());
 	        sprite.setTranslateY(sprite.getTranslateY() + lookAhead*sprite.getSpeedY());
-	        
+
 	        for(Terrain terrain : GameLoop.terrain)
 	        {
 	        	s = Shape.intersect(sprite, terrain);
@@ -56,6 +56,22 @@ public class CollisionAdapter
 	    	        sprite.setTranslateY(zwY);
 	    	        
 	    		    sprite.setSpeed(evalCollLine(sprite, s));
+	        	}
+	        }
+	        for(Sprite sprite2 : GameLoop.sprites)
+	        {
+	        	if(sprite != sprite2)
+	        	{
+	        	s = Shape.intersect(sprite, sprite2);
+	        	s.setFill(Color.CYAN);
+	        	
+	        	if(!s.getBoundsInLocal().isEmpty())
+	        	{
+	    	        sprite.setTranslateX(zwX);
+	    	        sprite.setTranslateY(zwY);
+	    	        
+	    		    sprite.setSpeed(evalCollLine(sprite, s));
+	        	}
 	        	}
 	        }
 	        		
