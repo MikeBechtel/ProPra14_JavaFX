@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 public class GameLoop
 {
@@ -57,15 +58,20 @@ public class GameLoop
 		sprites = new ArrayList<Sprite>();
 		terrain = new ArrayList<Terrain>();
 
-		sprites.add(new SpriteBullet(100, 100));
-		sprites.add(new SpriteBullet(500, 100));
-		sprites.add(new SpriteBullet(500, 300));
+		SpriteBullet b = new SpriteBullet(4, 4, 30);
+		b.setSpeedX(7);
+		b.setSpeedY(9);
+		b.setFill(Color.BLUEVIOLET);
+
+		sprites.add(b);
 
 		terrain.add(new TerrainGras(0, 500, 0, 600, 800, 600, 800, 500));
-		terrain.add(new TerrainGras(0, 100, 0, 300, 100, 300));
+		terrain.add(new TerrainGras(800, 100, 800, 300, 700, 300));
+		terrain.add(new TerrainGras(0, 100, 0, 300, 100, 300, 200, 150));
 		
 		parentPane.getChildren().addAll(sprites);
 		parentPane.getChildren().addAll(terrain);
+//		parentPane.requestFocus();
 	}
 	
 	public void setFPS(int fps)

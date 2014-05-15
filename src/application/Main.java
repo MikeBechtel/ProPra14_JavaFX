@@ -37,6 +37,7 @@ public class Main extends Application
 			Scene scene = new Scene(rootLayout);
 			
 			this.primaryStage.setScene(scene);
+			
 			this.primaryStage.setResizable(false);
 			this.primaryStage.show();
 		}
@@ -97,7 +98,8 @@ public class Main extends Application
 	        rootLayout.setCenter(gamePage);
 	        
 	        GameController controllerGame = loader.getController();
-	        controllerGame.setMainApp(this);
+	        controllerGame.setScene(primaryStage.getScene());
+	        controllerGame.initAdapters();
 	    } 
 	    catch (IOException ex) 
 	    {

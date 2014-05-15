@@ -1,13 +1,15 @@
 package controller;
 
 import adapters.GameLoop;
-import application.Main;
+import adapters.KeyboardAdapter;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class GameController
 {
-	private Main mainApp;
+	private Scene parentScene;
 	
     static int dx = 10;
     static int dy = 10;
@@ -19,20 +21,26 @@ public class GameController
 	{
 	}
 	
-	public void setMainApp(Main mainApp)
+	public void setScene(Scene parentScene)
 	{
-		this.mainApp = mainApp;
+		this.parentScene = parentScene;
 	}
 	
-	public Main getMainApp()
+	public Scene getScene()
 	{
-		return this.mainApp;
+		return parentScene;
 	}
 	
 	@FXML
 	private void initialize()
 	{
 		GameLoop loop = new GameLoop(gamePane);
+		
 		loop.start();
+	}
+	
+	public void initAdapters()
+	{
+		parentScene.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardAdapter());
 	}
 }

@@ -4,9 +4,10 @@ import javafx.scene.paint.Color;
 
 public class SpriteBullet extends Sprite
 {
-	public SpriteBullet(int posX, int posY)
+	
+	public SpriteBullet(int posX, int posY, int size)
 	{
-		super(posX, posY, posX, posY + 20, posX + 20, posY + 20, posX + 20, posY);
+		super(posX, posY, posX, posY + size, posX + size, posY + size, posX + size, posY);
 		super.fillSprite(Color.GRAY);
 		
 		speedX = 5;
