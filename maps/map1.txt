@@ -1,0 +1,25 @@
+#Map Name
+name=Ebene
+
+#Borders
+<type=gras;points=[(0,0),(0,600),(10,600),(10,0)]>
+<type=gras;points=[(10,0),(10,10),(800,10),(800,0)]>
+<type=gras;points=[(800,10),(790,10),(790,600),(800,600)]>
+<type=gras;points=[(10,600),(10,590),(790,590),(790,600)]>
+
+#Terrain
+<type=gras;points=[(10,590),(10,300),(80,500),(160,590)]>
+<type=gras;points=[(790,590),(790,350),(630,400),(550,460),(480,590)]>
+<type=gras;points=[(10,10),(400,30),(790,10)]>
+
+#Solids
+<type=solidstone;points=[(150,300),(400,300),(275,350)]>
+<type=solidstone;points=[(450,150),(700,150),(575,200)]>
+
+#Sprites
+
+#Spawnpoints
+<type=spawn;startx=200;starty=290>
+<type=spawn;startx=600;starty=140>
+<type=spawn;startx=750;starty=350>
+<type=spawn;startx=100;starty=510>

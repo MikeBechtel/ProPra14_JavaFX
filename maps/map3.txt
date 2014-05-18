@@ -8,10 +8,13 @@ name=Ebene
 <type=gras;points=[(10,600),(10,590),(790,590),(790,600)]>
 
 #Terrain
-<type=gras;points=[(10,590),(10,300),(80,500),(160,590)]>
-<type=gras;points=[(790,590),(790,350),(630,400),(550,460),(480,590)]>
-<type=gras;points=[(10,10),(400,30),(790,10)]>
-<type=gras;points=[(300,400),(380,400),(380,200)]>
+
+#Solids
 
 #Sprites
-<type=bullet;startx=200;starty=200;size=20>
+
+#Spawnpoints
+<type=spawn;startx=200;starty=580>
+<type=spawn;startx=600;starty=580>
+<type=spawn;startx=750;starty=580>
+<type=spawn;startx=100;starty=580>

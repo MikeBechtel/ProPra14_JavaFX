@@ -2,6 +2,7 @@ package model;
 
 import com.sun.javafx.geom.Vec2d;
 
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Polygon;;
 
@@ -57,4 +58,6 @@ public abstract class Sprite extends Polygon
 	{
 		super.setFill(paint);
 	}
+	
+	public abstract void setImage(ImagePattern imagePattern);
 }

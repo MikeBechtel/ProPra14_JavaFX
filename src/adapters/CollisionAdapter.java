@@ -43,10 +43,22 @@ public class CollisionAdapter
 	        
 	        sprite.setTranslateX(sprite.getTranslateX() + lookAhead*sprite.getSpeedX());
 	        sprite.setTranslateY(sprite.getTranslateY() + lookAhead*sprite.getSpeedY());
-        	
+
 	        for(Terrain terrain : GameLoop.terrain)
 	        {
 	        	s = Shape.intersect(sprite, terrain);
+	        	
+	        	if(!s.getBoundsInLocal().isEmpty())
+	        	{
+	    	        sprite.setTranslateX(zwX);
+	    	        sprite.setTranslateY(zwY);
+	    		    
+	    		    sprite.setSpeed(evalCollLine(sprite, s));
+	        	}
+	        }
+	        for(Solid solid : GameLoop.solids)
+	        {
+	        	s = Shape.intersect(sprite, solid);
 	        	
 	        	if(!s.getBoundsInLocal().isEmpty())
 	        	{

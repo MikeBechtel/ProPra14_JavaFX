@@ -17,8 +17,10 @@ public class GameLoop
 	AnchorPane parentPane;
 	Timeline loop;
 	
-	static ArrayList<Sprite> sprites;
 	static ArrayList<Terrain> terrain;
+	static ArrayList<Solid> solids;
+	static ArrayList<Sprite> sprites;
+	static ArrayList<Spawnpoint> spawn;
 	
 	private MapReader mapReader;
 	private Map currMap;
@@ -59,13 +61,17 @@ public class GameLoop
 	
 	private void init()
 	{
-		currMap = mapReader.readMap("maps/Ebene.txt");
+		currMap = mapReader.readMap("maps/map1.txt");
 		
-		sprites = currMap.getSprites();
 		terrain = currMap.getTerrain();
+		solids = currMap.getSolids();
+		sprites = currMap.getSprites();
+		spawn = currMap.getSpawnpoints();
 		
-		parentPane.getChildren().addAll(sprites);
 		parentPane.getChildren().addAll(terrain);
+		parentPane.getChildren().addAll(solids);
+		parentPane.getChildren().addAll(sprites);
+		parentPane.getChildren().addAll(spawn);
 	}
 	
 	public void setFPS(int fps)
