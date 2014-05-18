@@ -2,9 +2,9 @@ package application;
 	
 import java.io.IOException;
 
-import controller.GameController;
-import controller.MainMenuController;
-import controller.SettingsMenuController;
+import controller.ControllerGame;
+import controller.ControllerMainMenu;
+import controller.ControllerSettingsMenu;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -38,7 +38,7 @@ public class Main extends Application
 			
 			this.primaryStage.setScene(scene);
 			
-			this.primaryStage.setResizable(true);
+			this.primaryStage.setResizable(false);
 			this.primaryStage.show();
 		}
 		catch(IOException ex)
@@ -59,7 +59,7 @@ public class Main extends Application
 	        AnchorPane menuPage = (AnchorPane) loader.load();
 	        rootLayout.setCenter(menuPage);
 	        
-	        MainMenuController controllerMain = loader.getController();
+	        ControllerMainMenu controllerMain = loader.getController();
 	        controllerMain.setMainApp(this);
 	    } 
 	    catch (IOException ex) 
@@ -78,7 +78,7 @@ public class Main extends Application
 	        AnchorPane menuPage = (AnchorPane) loader.load();
 	        rootLayout.setCenter(menuPage);
 	        
-	        SettingsMenuController controllerMain = loader.getController();
+	        ControllerSettingsMenu controllerMain = loader.getController();
 	        controllerMain.setMainApp(this);
 	    } 
 	    catch (IOException ex) 
@@ -97,7 +97,7 @@ public class Main extends Application
 	        AnchorPane gamePage = (AnchorPane) loader.load();
 	        rootLayout.setCenter(gamePage);
 	        
-	        GameController controllerGame = loader.getController();
+	        ControllerGame controllerGame = loader.getController();
 	        controllerGame.setScene(primaryStage.getScene());
 	        controllerGame.initAdapters();
 	    } 

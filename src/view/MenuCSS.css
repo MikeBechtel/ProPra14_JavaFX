@@ -68,3 +68,7 @@
 .button:default:hover {
     -fx-background-color: derive(-fx-focus-color,30%);
 }
+
+.gamepanel {
+	-fx-background-color: lightblue;
+}

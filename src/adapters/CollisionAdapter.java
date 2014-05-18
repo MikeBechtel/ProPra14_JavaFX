@@ -2,6 +2,7 @@ package adapters;
 
 import com.sun.javafx.geom.Vec2d;
 
+import controller.GameLoop;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Shape;
 import model.*;

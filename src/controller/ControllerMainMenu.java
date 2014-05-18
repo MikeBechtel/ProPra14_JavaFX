@@ -3,11 +3,11 @@ package controller;
 import application.Main;
 import javafx.fxml.FXML;
 
-public class MainMenuController 
+public class ControllerMainMenu 
 {
 	private Main mainApp;
 	
-	public MainMenuController() {}
+	public ControllerMainMenu() {}
 	
 	public void setMainApp(Main mainApp)
 	{

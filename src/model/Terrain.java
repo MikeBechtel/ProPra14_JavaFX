@@ -10,5 +10,8 @@ public abstract class Terrain extends Polygon
 		super(points);
 	}
 	
-	protected abstract void setImage(ImagePattern imagePattern);
+	protected void setImage(ImagePattern imagePattern)
+	{
+		super.setFill(imagePattern);
+	}
 }

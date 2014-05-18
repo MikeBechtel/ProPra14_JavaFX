@@ -5,14 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 
-public class SettingsMenuController 
+public class ControllerSettingsMenu 
 {
 	private Main mainApp;
 	
 	@FXML
 	private ChoiceBox<String> choiceRes;
 	
-	public SettingsMenuController() {}
+	public ControllerSettingsMenu() {}
 	
 	public void setMainApp(Main mainApp)
 	{
