@@ -3,7 +3,6 @@ package adapters;
 import com.sun.javafx.geom.Vec2d;
 
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import model.*;
 
@@ -44,17 +43,16 @@ public class CollisionAdapter
 	        
 	        sprite.setTranslateX(sprite.getTranslateX() + lookAhead*sprite.getSpeedX());
 	        sprite.setTranslateY(sprite.getTranslateY() + lookAhead*sprite.getSpeedY());
-
+        	
 	        for(Terrain terrain : GameLoop.terrain)
 	        {
 	        	s = Shape.intersect(sprite, terrain);
-	        	s.setFill(Color.CYAN);
 	        	
 	        	if(!s.getBoundsInLocal().isEmpty())
 	        	{
 	    	        sprite.setTranslateX(zwX);
 	    	        sprite.setTranslateY(zwY);
-	    	        
+	    		    
 	    		    sprite.setSpeed(evalCollLine(sprite, s));
 	        	}
 	        }
@@ -62,16 +60,15 @@ public class CollisionAdapter
 	        {
 	        	if(sprite != sprite2)
 	        	{
-	        	s = Shape.intersect(sprite, sprite2);
-	        	s.setFill(Color.CYAN);
-	        	
-	        	if(!s.getBoundsInLocal().isEmpty())
-	        	{
-	    	        sprite.setTranslateX(zwX);
-	    	        sprite.setTranslateY(zwY);
-	    	        
-	    		    sprite.setSpeed(evalCollLine(sprite, s));
-	        	}
+		        	s = Shape.intersect(sprite, sprite2);
+		        	
+		        	if(!s.getBoundsInLocal().isEmpty())
+		        	{
+		    	        sprite.setTranslateX(zwX);
+		    	        sprite.setTranslateY(zwY);
+		    	        
+		    		    sprite.setSpeed(evalCollLine(sprite, s));
+		        	}
 	        	}
 	        }
 	        		
@@ -95,7 +92,7 @@ public class CollisionAdapter
 
         double lx = getMidX(sprite)-getMidX(shape);
 		double ly = getMidY(sprite)-getMidY(shape);
-		
+
 		/*
 		 * functions from Linear Algebra
 		 */

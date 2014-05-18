@@ -38,7 +38,7 @@ public class Main extends Application
 			
 			this.primaryStage.setScene(scene);
 			
-			this.primaryStage.setResizable(false);
+			this.primaryStage.setResizable(true);
 			this.primaryStage.show();
 		}
 		catch(IOException ex)

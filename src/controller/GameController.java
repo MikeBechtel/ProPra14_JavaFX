@@ -4,6 +4,8 @@ import adapters.GameLoop;
 import adapters.KeyboardAdapter;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -16,6 +18,9 @@ public class GameController
 	
 	@FXML
 	private AnchorPane gamePane;
+	
+	@FXML
+	private ScrollPane scrollPane;
 	
 	public GameController()
 	{
@@ -34,8 +39,10 @@ public class GameController
 	@FXML
 	private void initialize()
 	{
-		GameLoop loop = new GameLoop(gamePane);
+		scrollPane.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
+		scrollPane.vbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
 		
+		GameLoop loop = new GameLoop(gamePane);
 		loop.start();
 	}
 	
